@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Тестовая форма для загрузки файлов</title>
+    <style>
+        h3 {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 14pt;
+            color: blueviolet;
+        }
+
+        label {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 11pt;
+        }
+
+        input, button {
+            border-radius: 4px; /* Уголки */
+        }
+    </style>
+</head>
+
+<body>
+<h3> Тестовая форма для загрузки файлов </h3>
+<form enctype="multipart/form-data" action="{{ .Link}}" method="post">
+    <table cellpadding="5" width="40%">
+        <tr>
+            <td><label>Исходящий номер</label></td>
+            <td><input name="call-number" value=78127777777 aria-label="Номер телефона" type="text" placeholder="062"/></td>
+        </tr>
+        <tr>
+            <td><label>Входящий номер</label></td>
+            <td><input name="dest-number" value=062 aria-label="Номер телефона" type="text" placeholder="062"/></td>
+        </tr>
+        <tr>
+            <td><label>Загрузка файла</label></td>
+            <td><input type="file" name="uploadFile"/></td>
+        </tr>
+        <tr>
+            <td>
+                <input type="submit" value="Отправить"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

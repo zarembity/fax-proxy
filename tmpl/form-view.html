@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Просмотр результата</title>
+    <style>
+        h3 {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 15pt;
+            color: blueviolet;
+        }
+
+        label {
+            font-family: Verdana, Arial, Helvetica, sans-serif;
+            font-size: 12pt;
+        }
+
+        input, button {
+            border-radius: 4px; /* Уголки */
+        }
+    </style>
+</head>
+
+<body>
+<h3> Просмотр результата</h3>
+<form action="{{ .Link}}">
+    <table cellpadding="5" width="40%">
+        <input type="hidden" name="r-format" value="html">
+        <tr>
+            <td><label>UID</label></td>
+            <td><input type="text" name="uid"/></td>
+        </tr>
+        <tr>
+            <td><label>Номер телефона</label></td>
+            <td><input name="phone-number" value=78127777777 aria-label="Номер телефона" type="text" placeholder="062"/></td>
+            <td>
+                <select name="destination">
+                   <option value="send">Исходящие</option>
+                   <option value="received">Входящие</option>
+                </select>
+            </td>
+        </tr>
+
+{{/*        <tr>*/}}
+{{/*            <td><label>Дата</label></td>*/}}
+{{/*            <td><input name="date" type="date"/></td>*/}}
+{{/*        </tr>*/}}
+        <tr>
+            <td>
+                <input type="submit" value="Найти"/>
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+</html>

@@ -1,0 +1,33 @@
+service:
+  port: 8087
+  env: dev
+  log: /var/log/fax-proxy-service.log
+  errorLog: /var/log/fax-proxy-service.error
+  pid: /var/log/fax-proxy-service.pid
+  logLevel: 4 # 1 .. 5
+  image:
+    maxSize: 30 # Max image size 2 Mb
+    mimeType:
+      - image/tiff
+      - image/png
+      - image/jpeg
+
+auth:
+  user: "admin"
+  password: "pass"
+
+connection:
+  db:
+    addr:
+    port:
+    db_name:
+    db_user:
+    db_passwd:
+  freeswitch:
+    addr:
+    pass:
+    local_port:
+    audio_path:
+    receive_audio:
+    fax_path: "/tmp"
+    gw: "test_gateway"
